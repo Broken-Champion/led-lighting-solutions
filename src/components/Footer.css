@@ -1,0 +1,235 @@
+.footer {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    color: #E5E7EB;
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    margin-top: 0;
+    display: block;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0066FF, transparent);
+    z-index: 2;
+}
+
+.footer-main {
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: brightness(1.2);
+}
+
+.footer-tagline {
+    color: #9CA3AF;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 0.938rem;
+}
+
+.footer-certifications {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 102, 255, 0.1);
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    border-radius: 6px;
+    font-size: 0.813rem;
+    color: #60A5FA;
+    font-weight: 600;
+}
+
+.cert-badge svg {
+    color: #60A5FA;
+    flex-shrink: 0;
+}
+
+.footer-section h4 {
+    color: white;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.footer-section a,
+.footer-section span {
+    color: #9CA3AF;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.938rem;
+    transition: all 0.2s ease;
+    line-height: 1.6;
+}
+
+.footer-section a:hover {
+    color: #60A5FA;
+    padding-left: 4px;
+}
+
+.footer-contact .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-contact .contact-item svg {
+    color: #0066FF;
+    flex-shrink: 0;
+}
+
+.footer-contact .contact-item a,
+.footer-contact .contact-item span {
+    margin-bottom: 0;
+    color: #E5E7EB;
+    font-size: 0.938rem;
+}
+
+.footer-contact .contact-item a:hover {
+    color: #60A5FA;
+    padding-left: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 102, 255, 0.1);
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+}
+
+.footer-social a:hover {
+    background: rgba(0, 102, 255, 0.2);
+    border-color: #0066FF;
+    transform: translateY(-3px);
+    padding-left: 0;
+}
+
+.footer-social svg {
+    width: 20px;
+    height: 20px;
+    color: #60A5FA;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    color: #9CA3AF;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-legal a {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: #60A5FA;
+}
+
+.footer-legal span {
+    color: #4B5563;
+}
+
+@media (max-width: 1200px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-brand {
+        grid-column: 1;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-certifications {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,48 @@
+.products-page,
+.about-page,
+.services-page,
+.contact-page,
+.quote-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
+.page-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #FFFFFF;
+    border-bottom: 2px solid var(--brand-blue);
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    color: #666666;
+}
+
+.products-content,
+.about-content,
+.services-content,
+.contact-content,
+.quote-content {
+    padding: 4rem 2rem;
+}
+
+.section-container h2 {
+    font-size: 2.5rem;
+    color: var(--brand-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-container p {
+    font-size: 1.2rem;
+    color: #666666;
+    text-align: center;
+}
