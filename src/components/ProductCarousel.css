@@ -1,6 +1,6 @@
 .product-carousel-section {
     padding: 80px 0;
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #0066FF 0%, #004FCC 100%);
 }
 
 .carousel-container {
@@ -11,17 +11,19 @@
 
 .carousel-title {
     font-size: 3rem;
-    font-weight: bold;
-    color: var(--brand-blue);
+    font-weight: 800;
+    color: white;
     text-align: center;
     margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-subtitle {
     font-size: 1.25rem;
-    color: #666666;
+    color: rgba(255, 255, 255, 0.95);
     text-align: center;
     margin-bottom: 3rem;
+    font-weight: 500;
 }
 
 .carousel-wrapper {
@@ -36,17 +38,65 @@
     flex: 1;
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
+    width: calc(3 * 280px + 2 * 2rem);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Right barrier overlay - cards emerge from underneath */
+.carousel-viewport::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: calc((280px + 2rem) / 2 + 40px);
+    height: 100%;
+    background: #0058E5;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Left barrier overlay - cards disappear underneath */
+.carousel-viewport::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: calc((280px + 2rem) / 2 + 40px);
+    height: 100%;
+    background: #0058E5;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .carousel-track {
     display: flex;
     gap: 2rem;
-    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: none;
     will-change: transform;
+    transform: translateX(calc((280px + 2rem) / 2));
+}
+
+.carousel-track.animating {
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: translateX(calc(-1 * (280px + 2rem) / 2));
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
 .carousel-arrow {
-    background: rgba(0, 102, 255, 0.2);
+    background: rgba(0, 102, 255, 0.15);
     border: 2px solid var(--brand-blue);
     color: var(--brand-blue);
     width: 50px;
@@ -59,13 +109,14 @@
     transition: all 0.3s ease;
     flex-shrink: 0;
     z-index: 10;
+    box-shadow: var(--shadow-sm);
 }
 
 .carousel-arrow:hover:not(:disabled) {
     background: var(--brand-blue);
     color: white;
     transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+    box-shadow: var(--shadow-blue);
 }
 
 .carousel-arrow:disabled {
@@ -83,20 +134,21 @@
 }
 
 .product-card {
-    background: linear-gradient(135deg, #E8EAED 0%, #F0F2F5 100%);
-    border: 2px solid rgba(0, 102, 255, 0.2);
-    border-radius: 20px;
+    background: linear-gradient(135deg, #F0F2F5 0%, #FFFFFF 100%);
+    border: 2px solid rgba(0, 102, 255, 0.15);
+    border-radius: var(--radius-xl);
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-    flex: 0 0 calc((100% - 4rem) / 3);
-    min-width: calc((100% - 4rem) / 3);
+    flex: 0 0 280px;
+    min-width: 280px;
+    box-shadow: var(--shadow-sm);
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(135deg, #F0F2F5 0%, #F8FBFF 100%);
-    box-shadow: 0 20px 40px rgba(0, 102, 255, 0.25);
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFF 100%);
+    box-shadow: var(--shadow-blue-hover);
     border-color: var(--brand-blue);
 }
 
@@ -106,21 +158,35 @@
     left: 20px;
     background: var(--brand-red);
     color: white;
-    font-weight: bold;
+    font-weight: 700;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
     font-size: 0.875rem;
     z-index: 10;
+    box-shadow: 0 4px 12px rgba(255, 59, 59, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .product-image {
-    height: 200px;
-    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    height: 280px;
+    background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: inset 0 -2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
 }
 
 .product-placeholder {
@@ -137,24 +203,28 @@
 }
 
 .product-category {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .product-name {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--brand-blue-bg);
+    font-weight: 700;
+    color: var(--text-primary);
     margin-bottom: 0.75rem;
     min-height: 3rem;
     line-height: 1.5rem;
 }
 
 .product-specs {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .product-detail-btn {
@@ -164,15 +234,56 @@
     padding: 0.75rem 2rem;
     border-radius: 25px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 59, 59, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .product-detail-btn:hover {
     background: var(--brand-red-dark);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 59, 59, 0.45);
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    color: var(--brand-blue);
+    border: 2px solid white;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-nav-btn:active {
+    transform: translateY(-1px);
+}
+
+.carousel-nav-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .carousel-indicators {
@@ -180,34 +291,37 @@
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-    padding: 2rem 0 0 0;
+    padding: 1.5rem 0 0 0;
     position: relative;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .indicator {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .indicator.active {
-    background: var(--brand-blue);
+    background: white;
     width: 30px;
     border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .indicator:hover {
-    background: rgba(0, 102, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
 }
 
 @media (max-width: 1200px) {
     .product-card {
-        flex: 0 0 calc((100% - 2rem) / 2);
-        min-width: calc((100% - 2rem) / 2);
+        flex: 0 0 280px;
+        min-width: 280px;
     }
 
     .carousel-title {
@@ -218,12 +332,21 @@
         width: 45px;
         height: 45px;
     }
+
+    .carousel-navigation {
+        gap: 1.5rem;
+    }
+
+    .carousel-nav-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.938rem;
+    }
 }
 
 @media (max-width: 768px) {
     .product-card {
-        flex: 0 0 100%;
-        min-width: 100%;
+        flex: 0 0 280px;
+        min-width: 280px;
     }
 
     .carousel-wrapper {
@@ -253,10 +376,20 @@
     }
 
     .product-image {
-        height: 250px;
+        height: 280px;
     }
 
     .product-name {
         font-size: 1.25rem;
+    }
+
+    .carousel-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .carousel-nav-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

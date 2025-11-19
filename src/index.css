@@ -5,12 +5,42 @@
 }
 
 :root {
+  /* Brand Colors */
   --brand-blue: #0066FF;
   --brand-blue-dark: #0052CC;
+  --brand-blue-darker: #004099;
   --brand-blue-light: #3385FF;
   --brand-blue-lighter: #E6F0FF;
   --brand-red: #FF3B3B;
   --brand-red-dark: #CC2F2F;
+  
+  /* Background Colors */
+  --bg-white: #FFFFFF;
+  --bg-gray-light: #F8F9FA;
+  --bg-gray: #E8EAED;
+  --bg-dark: #1a1a1a;
+  
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-light: #9CA3AF;
+  --text-white: #FFFFFF;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-blue: 0 8px 24px rgba(0, 102, 255, 0.25);
+  --shadow-blue-hover: 0 12px 32px rgba(0, 102, 255, 0.35);
+  
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
 }
 
 html, body {
@@ -27,8 +57,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333333;
-  background: #FFFFFF;
+  color: var(--text-primary);
+  background: var(--bg-white);
 }
 
 code {
@@ -41,3 +71,4 @@ code {
   display: flex;
   flex-direction: column;
 }
+

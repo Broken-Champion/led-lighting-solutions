@@ -1,0 +1,284 @@
+/* Quote Page Styles */
+.quote-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: #FAFAFA;
+}
+
+.quote-page .page-header {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-page .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.quote-page .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-page .page-header p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-page .quote-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: #FAFAFA;
+}
+
+.quote-page .quote-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.quote-page .quote-intro h2 {
+    font-size: 2.5rem;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.quote-page .quote-intro p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.quote-page .quote-form {
+    background: #FAFAFA;
+    border: 2px solid rgba(0, 102, 255, 0.12);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 4rem;
+}
+
+.quote-page .form-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 102, 255, 0.08);
+}
+
+.quote-page .form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.quote-page .form-section h3 {
+    font-size: 1.75rem;
+    color: var(--brand-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.quote-page .section-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.quote-page .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 0;
+}
+
+.quote-page .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.quote-page .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.quote-page .form-group input,
+.quote-page .form-group select,
+.quote-page .form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid rgba(0, 102, 255, 0.12);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #FAFAFA;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.quote-page .form-group input:focus,
+.quote-page .form-group select:focus,
+.quote-page .form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-blue);
+    background: #F5F5F5;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.quote-page .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.quote-page .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.quote-page .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+    border: 1px solid rgba(0, 102, 255, 0.12);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quote-page .checkbox-label:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+}
+
+.quote-page .checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--brand-blue);
+}
+
+.quote-page .checkbox-label span {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.quote-page .submit-btn {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+    color: white;
+    padding: 1.25rem 4rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.quote-page .submit-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 102, 255, 0.3);
+}
+
+.quote-page .quote-benefits {
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+    border: 1px solid rgba(0, 102, 255, 0.12);
+    border-radius: 12px;
+    padding: 3rem;
+}
+
+.quote-page .quote-benefits h3 {
+    font-size: 2rem;
+    color: var(--brand-blue);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.quote-page .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.quote-page .benefit-item {
+    text-align: center;
+    padding: 2rem;
+    background: #FAFAFA;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 102, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quote-page .benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 102, 255, 0.15);
+    border-color: var(--brand-blue);
+}
+
+.quote-page .benefit-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.quote-page .benefit-item h4 {
+    font-size: 1.5rem;
+    color: var(--brand-blue);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.quote-page .benefit-item p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .quote-page .quote-form {
+        padding: 2rem;
+    }
+
+    .quote-page .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-page .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-page .submit-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .quote-page .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
