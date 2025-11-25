@@ -11,6 +11,7 @@ import Panel from "../assets/products/PANEL .png";
 import RecessedDownlights from "../assets/products/RecessedDownlights .png";
 import UFOHighBay from "../assets/products/UFOHighBayLights .png";
 import VaporTight from "../assets/products/Vapor-Tight-Lights .png";
+import T8s from "../assets/products/T8s.png";
 
 interface Product {
   id: number;
@@ -27,7 +28,7 @@ const products: Product[] = [
     name: "LED Tube T8 Type A",
     category: "LED Lighting Solutions",
     specs: "Ballast Compatible / A++",
-    image: null,
+    image: T8s,
     soldOut: false,
   },
   {
@@ -35,7 +36,7 @@ const products: Product[] = [
     name: "LED Tube T8 Type B",
     category: "LED Lighting Solutions",
     specs: "Ballast Bypass / A++",
-    image: null,
+    image: T8s,
     soldOut: false,
   },
   {
@@ -43,7 +44,7 @@ const products: Product[] = [
     name: "LED Tube T8 Type A+B",
     category: "LED Lighting Solutions",
     specs: "Hybrid Design / A++",
-    image: null,
+    image: T8s,
     soldOut: false,
   },
   {

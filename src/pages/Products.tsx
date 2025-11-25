@@ -8,13 +8,14 @@ import Panel from "../assets/products/PANEL .png";
 import RecessedDownlights from "../assets/products/RecessedDownlights .png";
 import UFOHighBay from "../assets/products/UFOHighBayLights .png";
 import VaporTight from "../assets/products/Vapor-Tight-Lights .png";
+import T8s from "../assets/products/T8s.png";
 
 function Products() {
   const productCategories = [
     {
       id: 1,
       name: "LED Tube T8 Type A",
-      image: null, // Placeholder - awaiting image
+      image: T8s,
       description:
         "Plug-and-play LED tubes compatible with existing electronic ballasts",
       features: [
@@ -28,7 +29,7 @@ function Products() {
     {
       id: 2,
       name: "LED Tube T8 Type B",
-      image: null, // Placeholder - awaiting image
+      image: T8s,
       description:
         "Direct wire LED tubes that bypass the ballast for maximum efficiency",
       features: [
@@ -47,7 +48,7 @@ function Products() {
     {
       id: 3,
       name: "LED Tube T8 Type A+B",
-      image: null, // Placeholder - awaiting image
+      image: T8s,
       description:
         "Hybrid LED tubes that work with or without a ballast for maximum flexibility",
       features: [

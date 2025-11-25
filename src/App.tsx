@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
+import ULLogo from "./assets/Certs/UL.png";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <div className="app">
           <Navbar />
+          <img src={ULLogo} alt="UL Certified" className="floating-ul-logo" />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
