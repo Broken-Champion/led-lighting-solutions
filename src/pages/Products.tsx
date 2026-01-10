@@ -251,7 +251,12 @@ function Products() {
               <div key={product.id} className="product-category-card">
                 {product.image ? (
                   <div className="product-image">
-                    <img src={product.image} alt={product.name} />
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 ) : (
                   <div className="product-icon">⚡</div>

@@ -1,0 +1,11 @@
+# robots.txt for LED Lighting Solutions
+# https://ledlightingsolutionsus.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ledlightingsolutionsus.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

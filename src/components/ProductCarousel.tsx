@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./ProductCarousel.css";
 
 // Import actual product images
@@ -121,6 +122,25 @@ const products: Product[] = [
   },
 ];
 
+// Map product IDs to their detail page routes
+const getProductRoute = (productId: number): string => {
+  const routes: { [key: number]: string } = {
+    1: "/products/t8-type-a",
+    2: "/products/t8-type-b",
+    3: "/products/t8-type-ab",
+    4: "/products/panel",
+    5: "/products/a19-bulbs",
+    6: "/products/vapor-tight",
+    7: "/products/flush-mount",
+    8: "/products/troffer",
+    9: "/products/linear-high-bay",
+    10: "/products/ufo-high-bay",
+    11: "/products/flood-lights",
+    12: "/products/recessed-downlights",
+  };
+  return routes[productId] || "/products";
+};
+
 function ProductCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -211,6 +231,23 @@ function ProductCarousel() {
         </p>
 
         <div className="carousel-wrapper">
+          <button
+            className="carousel-nav-btn carousel-nav-btn-prev"
+            onClick={handlePrev}
+            aria-label="Previous products"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
           <div className="carousel-viewport">
             <div className={`carousel-track ${isAnimating ? "animating" : ""}`}>
               {getVisibleProducts().map((product, idx) => (
@@ -264,38 +301,20 @@ function ProductCarousel() {
                     <p className="product-category">{product.category}</p>
                     <h3 className="product-name">{product.name}</h3>
                     <p className="product-specs">{product.specs}</p>
-                    <button className="product-detail-btn">Detail</button>
+                    <Link to={getProductRoute(product.id)} className="product-detail-btn">
+                      Details
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="carousel-navigation">
           <button
-            className="carousel-nav-btn"
-            onClick={handlePrev}
-            aria-label="Previous products"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            <span>Previous</span>
-          </button>
-          <button
-            className="carousel-nav-btn"
+            className="carousel-nav-btn carousel-nav-btn-next"
             onClick={handleNext}
             aria-label="Next products"
           >
-            <span>Next</span>
             <svg
               viewBox="0 0 24 24"
               fill="none"
