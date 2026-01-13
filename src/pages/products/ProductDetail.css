@@ -139,7 +139,8 @@
   gap: 1rem;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
   padding: 0.875rem 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -426,14 +427,16 @@
   transform: translateY(-5px);
 }
 
-.installation-types, .hybrid-modes {
+.installation-types,
+.hybrid-modes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.install-option, .mode-explanation {
+.install-option,
+.mode-explanation {
   background: linear-gradient(135deg, #FAFAFA, #F5F5F5);
   border: 1px solid rgba(0, 102, 255, 0.12);
   border-radius: var(--radius-md);
@@ -441,20 +444,23 @@
   transition: var(--transition-base);
 }
 
-.install-option:hover, .mode-explanation:hover {
+.install-option:hover,
+.mode-explanation:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
   border-color: var(--brand-blue);
 }
 
-.install-option h4, .mode-explanation h4 {
+.install-option h4,
+.mode-explanation h4 {
   font-size: 1.125rem;
   color: var(--brand-blue);
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
-.install-option p, .mode-explanation p {
+.install-option p,
+.mode-explanation p {
   font-size: 0.938rem;
   color: var(--text-secondary);
   margin: 0;
@@ -489,7 +495,8 @@
     align-items: center;
   }
 
-  .btn-cta-large, .btn-cta-secondary {
+  .btn-cta-large,
+  .btn-cta-secondary {
     width: 100%;
     max-width: 400px;
   }
@@ -534,7 +541,8 @@
     font-size: 2rem;
   }
 
-  .installation-types, .hybrid-modes {
+  .installation-types,
+  .hybrid-modes {
     grid-template-columns: 1fr;
   }
 }

@@ -25,30 +25,30 @@ beforeAll(() => {
 
   // Mock IntersectionObserver
   global.IntersectionObserver = class IntersectionObserver {
-    constructor() {}
-    disconnect() {}
-    observe() {}
+    constructor() { }
+    disconnect() { }
+    observe() { }
     takeRecords() {
       return [];
     }
-    unobserve() {}
+    unobserve() { }
   } as any;
 
   // Mock ResizeObserver
   global.ResizeObserver = class ResizeObserver {
-    constructor() {}
-    disconnect() {}
-    observe() {}
-    unobserve() {}
+    constructor() { }
+    disconnect() { }
+    observe() { }
+    unobserve() { }
   } as any;
 
   // Mock scrollTo
   window.scrollTo = vi.fn();
 
   // Mock HTMLMediaElement methods
-  window.HTMLMediaElement.prototype.load = () => {};
+  window.HTMLMediaElement.prototype.load = () => { };
   window.HTMLMediaElement.prototype.play = () => Promise.resolve();
-  window.HTMLMediaElement.prototype.pause = () => {};
+  window.HTMLMediaElement.prototype.pause = () => { };
 });
 
 // Mock CSS.supports for testing
@@ -64,7 +64,7 @@ class MockImage {
   onload: (() => void) | null = null;
   onerror: (() => void) | null = null;
   src = '';
-  
+
   constructor() {
     setTimeout(() => {
       if (this.onload) {
